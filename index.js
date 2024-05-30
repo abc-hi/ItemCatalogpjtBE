@@ -37,6 +37,7 @@ app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
         success: 1,
         image_url: `http://localhost:${port}/images/${req.file.filename}`
+        
     });
 });
 
@@ -236,7 +237,8 @@ const token = req.header('auth-token');
 if(!token){
     res.status(401).send({errors:"Please autheticate using vallid token"})
 
-
+}
+else{
 try{
     const data =jwt.verify(token,'secret_ecom');
     req.user =data.user;
