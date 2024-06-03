@@ -25,7 +25,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append("product", image);
 
-    await fetch("https://localhost:4000/upload", {
+    await fetch("http://localhost:4000/upload", {
       // await fetch("https://itemcatalogpjtbe.onrender.com/upload", {
 
       method: "post",
@@ -41,7 +41,7 @@ const AddProduct = () => {
     if (responseData.success) {
       product.image = responseData.image_url;
       console.log(product);
-      await fetch("https://localhost:4000/addproduct", {
+      await fetch("http://localhost:4000/addproduct", {
         // await fetch("https://itemcatalogpjtbe.onrender.com/addproduct", {
 
         method: "POST",
