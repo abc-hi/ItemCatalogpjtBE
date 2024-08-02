@@ -7,6 +7,10 @@ import path from 'path';
 import mongoose from 'mongoose';
 import { log } from 'console';
 import jwt from 'jsonwebtoken';
+import { fileURLToPath } from 'url';
+
+
+
 
 const app = express();
 app.use(express.json());
@@ -20,6 +24,11 @@ mongoose.connect("mongodb+srv://revathimohancse:fUDJolxXF7wy88HL@cluster0.tw8qyk
 app.get('/', (req, res) => {
     res.status(200).send('API is working');
 });
+
+// Get the current directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 //image storage
 const storage = multer.diskStorage({
