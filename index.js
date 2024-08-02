@@ -322,14 +322,14 @@ const app = express();
 app.use(express.json());
 
 // CORS Configuration
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// app.use(cors({
+//     origin: '*',
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type', 'Authorization']
+// }));
 
 app.use(cors({
-    origin: 'https://itemcatelogfrontcode.netlify.app/', // Specify your frontend domain
+    origin: 'https://itemcatelogfrontcode.netlify.app/', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true // Allow credentials to be included in requests
