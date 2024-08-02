@@ -371,9 +371,9 @@ app.post("/upload", upload.single('product'), (req, res) => {
     console.log("File uploaded:", req.file); // Logging file info for debugging
     res.json({
         success: 1,
-                image_url: `https://localhost:${port}/images/${req.file.filename}`
+                // image_url: `https://localhost:${port}/images/${req.file.filename}`
 
-        // image_url: `https://itemcatalogpjtbe.onrender.com/images/${req.file.filename}`
+        image_url: `https://itemcatalogpjtbe.onrender.com/images/${req.file.filename}`
     });
 });
 
