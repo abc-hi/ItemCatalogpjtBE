@@ -23,7 +23,9 @@ app.get('/', (req, res) => {
 
 //image storage
 const storage = multer.diskStorage({
-    destination: './upload/images',
+    // destination: './upload/images',
+    destination: path.join(__dirname, 'upload/images'),
+
     filename: (req, file, cb) => {
    cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
     }
@@ -31,7 +33,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-app.use('/images', express.static('upload/images'));
+// app.use('/images', express.static('upload/images'));
+app.use('/images', express.static(path.join(__dirname, 'upload/images')));
+
 
 app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
