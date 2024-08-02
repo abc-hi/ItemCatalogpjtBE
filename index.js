@@ -24,6 +24,7 @@
 
 
 
+
 // const port = 4000;
 
 // mongoose.connect("mongodb+srv://revathimohancse:fUDJolxXF7wy88HL@cluster0.tw8qyki.mongodb.net/");
@@ -326,6 +327,20 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.use(cors({
+    origin: 'https://itemcatelogfrontcode.netlify.app/', // Specify your frontend domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true // Allow credentials to be included in requests
+}));
+
+
+
+
+
+
+
 
 const port = 4000;
 
