@@ -14,6 +14,8 @@ import { fileURLToPath } from 'url';
 
 const app = express();
 app.use(express.json());
+
+// cors added
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
