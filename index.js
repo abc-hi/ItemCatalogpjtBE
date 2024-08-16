@@ -317,9 +317,14 @@ import path from 'path';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import { fileURLToPath } from 'url';
+import uploadRouter from './routes/upload.js'
+import dotenv from 'dotenv'
 
+dotenv.config()
 const app = express();
 app.use(express.json());
+app.use('/api', uploadRouter);
+
 
 // CORS Configuration
 // app.use(cors({
@@ -371,9 +376,9 @@ app.post("/upload", upload.single('product'), (req, res) => {
     console.log("File uploaded:", req.file); // Logging file info for debugging
     res.json({
         success: 1,
-                image_url: `https://localhost:${port}/images/${req.file.filename}`
+                // image_url: `https://localhost:${port}/images/${req.file.filename}`
 
-        // image_url: `https://itemcatalogpjtbe.onrender.com/images/${req.file.filename}`
+        image_url: `https://itemcatalogpjtbe.onrender.com/images/${req.file.filename}`
     });
 });
 
